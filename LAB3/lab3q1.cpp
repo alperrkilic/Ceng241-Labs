@@ -6,8 +6,8 @@ using namespace std;
 
 struct COURSE
 {
-    vector<string> course_name;
-    vector<double> grade;
+	string course_name;
+	double grade;
 };
 
 int main(void){
@@ -17,17 +17,15 @@ int main(void){
 	double cgpa{0};
 	double sum=0;
 	
-	COURSE student;
+	vector<COURSE> student;
 	
 	do{
+		COURSE course_info;
 		
 		cout<<"Enter course code and grade: ";
-		cin>>value.first>>value.second;
+		cin>>course_info.course_name>>course_info.grade;
 		
-		student.course_name.push_back(value.first);
-		student.grade.push_back(value.second);
-		
-		cin.ignore();
+		student.push_back(course_info);
 		
 		cout<<"Add new course ? ";
 		cin>>choice;
@@ -38,18 +36,14 @@ int main(void){
 	
 	size_t size;
 	
-	size=student.course_name.size();
+	size=student.size();
 	
 	cout<<"\nList of entered "<<size<<" courses: "<<endl;
 	
-	for(int i=0;i<size;i++)
+	for (auto &&i : student)
 	{
-		cout<<"- "<<student.course_name[i]<<" "<<student.grade[i]<<endl;
-	}
-	
-	for(int i=0;i<size;i++)
-	{
-		sum=sum+student.grade[i];
+		cout<<"- "<<i.course_name<<" "<<i.grade<<endl;
+		sum+=i.grade;
 	}
 	
 	
