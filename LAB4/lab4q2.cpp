@@ -42,7 +42,6 @@ void Employee::calculateBonus(){
 	else if(year>5 && year<=10)
 	{
 		bonus=salary*(0.05);
-		cout<<bonus<<salary<<endl;
 	}
 	else if(year>10 && year<=15)
 	{
