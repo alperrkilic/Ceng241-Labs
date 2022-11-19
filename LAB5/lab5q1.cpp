@@ -20,12 +20,8 @@ class Course{
 		double hwW;
 		double finW;
 
-	
 	public:
-		
-
-		
-		
+				
 		//Constructors:
 		Course();
 		Course(double mtW,double hwW,double finW);
@@ -48,7 +44,6 @@ class Course{
 		void set_finG(int finG);
 		void set_name(string name);
 		
-	
 };
 
 //Methods
@@ -101,18 +96,12 @@ void Course::calculate(){
 
 //Constructors
 
-Course::Course()
+Course::Course() : Course{0.30,0.20,0.50} //delegating from the 3-args-constructor
 {	
-	hwW=0.20;
-	mtW=0.30;
-	finW=0.50;	
 }
 
-Course::Course(double mtW,double hwW,double finW)
+Course::Course(double mtW,double hwW,double finW) : mtW{mtW},hwW{hwW},finW{finW}
 {
-	this->hwW=hwW;
-	this->mtW=mtW;
-	this->finW=finW;	
 }
 
 //Getters
